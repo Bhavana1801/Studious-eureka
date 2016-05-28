@@ -1,0 +1,68 @@
+This is a live document. Please keep checking it for updates.
+
+Homework!
+Book Your Show :-)
+This assignment is designed to reinforce your understanding of arrays, Regex, loops, and Java, in general. It asks you to build a BookYourShow class capable of booking tickets for movies. The BookYourShow class has a few simple behaviors, which are described below. It also asks you to develop a Menu class which should contain the main() method and provide the user with a menu allowing the user to exercise all of the features of the BookYourShow class.
+The Show Class
+Each Show should have the following information about the event it describes.
+The constructor should take a three parameters, the name of the movie, the date, the show time, and the seats with seat numbers.
+The Patron Class
+Each patron should have the following information.
+Name and Mobile Number
+The BookYourShow Class
+Each BookYourShow should allow the user to store Shows. The user can add, remove, and access shows as described below.
+Users should be able to addAShow() 
+Users should be able to getAShow() by specifying the movie name (a String). This method should return all the shows that matches the given movie name.
+Users should be able to bookAShow() by specifying the Name, Mobile Number, Date, Time and the Number of Seats. If the seats are not available then the booking should not be possible.
+Users should be able to printTickets() by specifying their mobile number and the show
+Users should be able to removeAMovie() which should remove all the shows that match this movie. 
+
+The Menu Class
+The menu should provide the user with the option of creating a new BookYourShow, and then of adding, booking, removing individual shows, or of printing a list of all books within the BookYourShow.
+
+
+Library Card Catalog with ArrayLists
+Java API provides a resizable array implementation which may be more efficient to use than arrays. Review the javadoc for ArrayLists (http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html). Update your Library Catalog code by replacing the Arrays with the ArrayList. Also, study about the different ways to iterate the ArrayList and in particular the “New Way to Loop” in the article given below. (http://crunchify.com/how-to-iterate-through-java-list-4-way-to-iterate-through-loop/). Update the loops that you have in your code with the “New Way to Loop”.
+
+Library Card Catalog
+This assignment is designed to reinforce your understanding of arrays, Regex, loops, and Java, in general. It asks you to build a Library Card Catalog class capable of holding an unknown number of cards. The Card Catalog has a few simple behaviors, which are described below. It also asks you to develop a Menu class which should contain the main() method and provide the user with a menu allowing the user to exercise all of the features of the Card Catalog class.
+
+The Card Class
+Each Card should have the following information about the book it describes.
+The constructor should take a three parameters, the title of the book, the author of the book, and the subject of the book. 
+Users should be able to access all the fields of the Card. 
+The Card Catalog Class
+Each Card Catalog should allow the user to store Cards. The user can add, remove, and access books as described below. Bonus: The array should GROW when the array is full!
+The constructor should instantiate three separate arrays, one to hold the cards in order by title, one to hold the cards in order by author, and one to hold the cards in order by subject The arrays should start at a size of 10. 
+Users should be able to addACard() to the catalog and the cards should be filed in the correct order inside of the arrays based on the correct field. 
+Users should be able to getATitle() by specifying the book's title (a String). This method should return the first Card with a title that matches the given title. Bonus: This should be done using a binary search.
+Users should be able to getAnAuthor() by specifying a specific author. The method should return all the books written by this author. 
+Users should be able to getSubject() which should return a list which contains all the books that involve this subject. This should be implemented using regex to search for the books. 
+Users should be able to removeATitle() which should remove this books from ALL of the card catalog stacks. 
+Users should be able to printTheCatalog() which should neatly print out all of the books in order by either title, or author, or subject based on how the user wants it. 
+
+The Menu Class
+The menu should provide the user with the option of creating a new Card Catalog, and then of adding, removing individual books, or of printing a list of all books within the Card Catalog.
+
+
+Assignment created by Prof. Greg Kesden, Carnegie Mellon University, edited by Praveen Garimella, CIHL in the year 2015.
+
+ListIterator<Show> iterator1 = shows.listIterator();
+    //ListIterator<Patron> iterator1 = pat.listIterator();
+    
+    int flag = 0;
+    while (iterator1.hasNext()) {
+      //while (iterator1.hasNext()) {
+      Show s = iterator1.next();
+      //Patron p = iterator1.next(); 
+      if(bookMovie.compareTo(s.getMovie()) == 0) {
+        //if(noOfSeats <= s.getSeats()) {
+//          int totalSeats = s.getSeats();
+//          totalSeats = totalSeats - noOfSeats;
+//          //s.getSnum()
+          System.out.println(s);
+//          System.out.println("in book show");
+//          System.out.println(date);
+//          System.out.println(totalSeats);
+          
+       // }
