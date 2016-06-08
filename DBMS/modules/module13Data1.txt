@@ -1,0 +1,61 @@
+
+
+TS2100143756
+Employees
+ EMP_ID                                    NOT NULL NUMBER(5)
+ EMP_NAME                                           VARCHAR2(20)
+ SALARY                                             NUMBER(7,2)
+ RATING                                             NUMBER(2)
+ AGE                                                NUMBER(2)
+insert into Employees values('12001','Ram','20000','5','30');
+insert into Employees values('12002','Vikram','30000','7','35');
+insert into Employees values('12003','Kumar','40000','8','40');
+insert into Employees values('12004','Vishnu','10000','3','25');
+insert into Employees values('12005','Varun','15000','4','28');
+insert into Employees values('12006','Kiran','15000','4','65');
+insert into Employees values('12007','Charan','40000','8','62');
+Bus
+ BUS_NO                                    NOT NULL NUMBER(8)
+ BUS_NAME                                           VARCHAR2(10)
+ RATING                                             NUMBER(2)
+ MAX_OPERATING_DISTANCE                             NUMBER(4)
+insert into Bus values('110001','Garuda','5','1000');
+insert into Bus values('220002','Volvo','8','2500');
+insert into Bus values('330003','Gemini','7','2000');
+insert into Bus values('440004','Vennela','4','900');
+insert into Bus values('550005','Rukmini','3','800');
+Bus_service
+ SERVICE_NO                                NOT NULL NUMBER(6)
+ BUS_NO                                             NUMBER(8)
+ SOURCE                                             VARCHAR2(10)
+ DESTINATION                                        VARCHAR2(10)
+ DISTANCE                                           NUMBER(4)
+ DEPARTS                                            VARCHAR2(10)
+ ARRIVES                                            VARCHAR2(10)
+ FARE                                               NUMBER(4)
+insert into Bus_service values('10002','110001','Hyderabad','Jaipur','950','11:30:00','08:00:00','1200');
+insert into Bus_service values('20003','220002','Hyderabad','Delhi','2255','08:00:00','07:30:00','2525');
+insert into Bus_service values('30001','330003','Delhi','Mumbai','1987','06:00:00','09:45:00','1955');
+insert into Bus_service values('40004','440004','Jaipur','Delhi','877','07:30:00','06:00:00','1000');
+insert into Bus_service values('50005','550005','Chennai','Banglore','711','06:00:00','02:00:00','910');
+
+
+insert into Bus_service values('10002','110001','Hyderabad','Jaipur','950',1130,0800,1200);
+insert into Bus_service values('20003','220002','Hyderabad','Delhi','2255',0800,0730,2525);
+insert into Bus_service values('30001','330003','Delhi','Mumbai','1987',0600,0945,1955);
+insert into Bus_service values('40004','440004','Jaipur','Delhi','877',0730,0600,1000);
+insert into Bus_service values('50005','550005','Chennai','Banglore','711',0600,0200,910);
+
+
+TS1100200275
+drives
+ EMP_ID                                    NOT NULL NUMBER(5)
+ BUS_NO                                    NOT NULL NUMBER(8)
+insert into drives values (12001,110001);
+insert into drives values (12002,110001);
+insert into drives values (12002,330003);
+insert into drives values (12002,440004);
+
+insert into drives values (12004,220002);
+insert into drives values (12006,220002);
+insert into drives values (12007,550005);

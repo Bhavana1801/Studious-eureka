@@ -1,0 +1,25 @@
+create table bus_service(
+service_no integer primary key,
+bus_no integer references bus(bus_no),
+source varchar2(20),
+destination varchar2(20),
+distance integer,
+departs date,
+arrives date,
+fare integer);
+
+create table bus(
+bus_no integer primary key,
+bus_name varchar2(20),
+rating integer,
+max_operating_distance integer);
+
+create table drives(
+emp_id references employees(emp_id),
+bus_no integer references bus(bus_no));
+
+create table employees(
+emp_id integer primary key,
+emp_name varchar2(20),
+salary integer,
+rating integer);

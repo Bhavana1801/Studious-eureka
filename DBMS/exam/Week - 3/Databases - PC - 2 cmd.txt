@@ -1,0 +1,1 @@
+C:\>sqlldr user1/user1 data="C:\Users\Dinesh\Desktop\person.csv" control="C:\Users\Dinesh\Desktop\person.ctl"

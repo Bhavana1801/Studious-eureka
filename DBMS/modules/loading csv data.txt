@@ -1,0 +1,5 @@
+First copy csv and ctl files into a folder in C drive.
+Open cmd prompt and run the following command:
+sqlldr user1/user1 data="<path to .csv>" control="<path to .ctl>"
+eg:
+sqlldr user1/user1 data="C:\work\person.csv" control="C:\work\person.ctl"
