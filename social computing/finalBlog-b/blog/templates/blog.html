@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+<div class = "container" style = "margin:50px;">
+	<div style="font-family:Goudy Old Style;color:red;font-size:x-large">
+	<h4>Welcome {{username}}</h4>
+</div>
+	<h1>Questions</h1>
+
+	<form action="/newpost/">
+	    <input class="btn-default" type="submit" value="Post Question">
+	</form>
+	<form action="/logout/">
+	    <input type="submit" value="logout">
+	</form>
+	
+	{% for p in blog_posts %}
+	<div class="post">
+	  <div class="title"><u><b>Subject</u></b> :    &nbsp;&nbsp;{{ p.subject }}
+	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u><b>Date</u></b> :    &nbsp;&nbsp;{{ p.created.strftime("%b %d, %Y") }}</div>
+	  <hr/>
+	  
+	  <div class="content"> <b>Question</b>  &nbsp;&nbsp;{{ p.content }}</div>
+	  <!-- {{p.key().id()}} -->
+	  {% for comment in comments %}
+	  	{% if comment.postID == p.key().id() %}
+	  		<p><b style="color:blue"><u>{{comment.user}}</u></b> <br><br>  <b>Answer:&nbsp;&nbsp;</b> {{comment.reply}}  <br><b>On:</b> &nbsp;&nbsp;{{comment.created.strftime("%b %d, %Y")}}</p>
+	  	{% endif %}
+	  {% endfor %}
+	  <div>
+	  	<br>
+	  	<form method = "post">
+	  		<input type="hidden" name="id" value = "{{p.key().id()}}">
+	  		<textarea name = "reply" rows = "3" cols="60"></textarea><br><br>
+	  		<input type = "submit" value = "reply"></input>
+	  		<a href="/refresh"> Refresh</a>
+	  	</form>
+
+	  </div>
+	</div>
+	{% endfor %}
+
+	<div id="queried">
+	queried {{ queried }} seconds ago.
+
+	</div>
+</div>
+<script src="http://uhchat.net/code.php?f=3e43ba"></script>
+{% endblock %}

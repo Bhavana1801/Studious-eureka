@@ -1,0 +1,69 @@
+application: the-techies1
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+# - url: /favicon\.ico
+#   static_files: favicon.ico
+#   upload: favicon\.ico
+- url: /css/
+  static_dir: css
+
+- url: /js
+  static_dir: js
+
+- url: /img
+  static_dir: img
+
+- url: /fonts
+  static_dir: fonts
+
+- url: /ico
+  static_dir: ico
+
+- url: /font-awesome
+  static_dir: font-awesome
+
+- url: /mail
+  static_dir: mail
+
+- url: /less
+  static_dir: less
+
+- url: /scss
+  static_dir: scss
+
+- url: /assets
+  static_dir: assets
+
+# - url: /.*
+#   static_dir: css
+
+
+- url: .*
+  script: main.app
+
+
+# - url: /(.*\.css)
+#   mime_type: text/css
+#   static_files: templates/\1
+#   upload: templates/(.*\.css)
+
+# - url: /(.+\.(css|js))$
+#   static_files: \1
+#   upload: .+\.(css|js)$
+#   application_readable: true
+
+# - url: /(.+)
+#   static_files: public/\1
+#   upload: public/(.*)
+
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
+
+- name: jinja2
+  version: latest
