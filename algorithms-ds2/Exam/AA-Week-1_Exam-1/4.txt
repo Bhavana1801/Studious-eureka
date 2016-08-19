@@ -1,0 +1,14 @@
+﻿4. State advantages and disadvantages of Dijkstra’s algorithm over the Bellman-Ford Algorithm (2M)
+
+
+advantages :
+ 1)Time complexity is less when compared to Bellman-Ford
+Dijkstras - O(m+nlogn) 
+Bellaman-ford O(mn)
+2) Can relate to real world applications mostly like network routing, maps.
+
+
+disadvantages :
+ 1) It cannot be applied to negatice costs.
+ 2) It cannot be applied to a cyclic graph
+while Bellman-ford can be applied.

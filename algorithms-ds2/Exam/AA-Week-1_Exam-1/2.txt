@@ -1,0 +1,83 @@
+﻿State true or false the following with reason:
+
+
+i. Breadth first search is also a solution to a shortest path problem (1+1=2M)
+
+ANS: True 
+	BFS and DFS are the graph traversal algorithms.
+	In BFS algorithm, we will start from a source vertes and traverse the child nodes of each node until every node is visited. 
+	When compared to DFS , the traversal of graph with BFS will give shortest path in a graph
+
+ii. There may be more than one shortest path. (1+2=3M)
+
+ANS : True
+	consider four vertices a,b,c,d source =a and the graph is in the following order
+     a
+2/   \2
+/        \
+b  ---1-- c
+\4     4 /
+  \      /
+      d
+
+here if we consider 'a' as the source vertex, then it has two connected vertices b and c with cost=2. 
+also to vertex 'd' the cost is 5 from 'b' and 'c'.
+so the two possibilities for the shortest path are a--->b--->c--->d or a-->c--->b--->d
+
+iii. Shortest path always exists. (1+1=2M)
+
+Ans : True
+     a
+2/   \1
+/        \
+b  ---1-- c
+\4     4 /
+  \      /
+      d
+consider the above graph, if u traverse through 'abcd' the distance is 7 and through 'acbd' the distance is 6. so whatever may be the graph, we consider the least distance path as the "shortest path"
+
+iv. Sub paths of shortest paths are themselves shortest paths (1+1=2M)
+
+
+
+ans : True
+	If you consider any traversal method you will go to next node only when the cost is less when compared to the cost of other nodes, 
+	Also we will update the values whenever a new route is found with less cost than the present one.
+	Hence every subpath is the shortest path for themselves.
+
+v. After the relaxations parent information traces out shortest paths (1+2=3M)
+
+ans : True
+	In Bellman fords algorithm, we will update the distance which is less than the previous value.
+	Hence after the relaxation, the new set of distances which are minimum will be there, which in turn are the shortest paths.
+
+vi. The efficiency of Dijkstra’s algorithm heavily relies on efficient priority queues. (1+1=2M)
+
+
+
+
+ans : True
+	if you consider the time complexities of the Dikstra's algorithm,
+	a) Dikstras (normal) - O(m+n2)
+	b) Dijkstra's (using binary heap) - O((m+n)logn)
+	c) Dijkstra's ( using fibonocci heap) - O(m+nlogn)
+so the algorithm depends on the data structure we use. if we use arrays or array lists,then the time complexity increases as the searching and sorting cost will be high in those data structures.
+
+vii. All-pairs problem for general edge costs reduces to one general single-source problem plus n single-source problems with non-negative edge costs. (1+2=3M) 
+
+ans : True
+	If you consider the johnsons algorithm which is an example of all pairs shortest path problem.
+	we will call bellman fords method for one time and Dijkstra's method for n times where n is the number of vertices.
+
+viii. In some cases, shortest path distance and tentative distance are same in Dijkstra’s algorithm. (1+1=2M)
+Ans : True
+	shortest path distance : The final path distance with minimum distance between every node.
+	tentative distance : The intermediate distance which we obtain during the operations of an algorithm. 
+Consider we have only one path between two nodes a and b, then, we dont get a chance to update the new minimum distacne.Hence the shortest distance and the tentative distances are the same.
+
+ix. Shortest paths in acyclic graphs can be computed in time O(n + m) (1+2=3M)
+Ans : false
+	If you consider Dijkstra's alogithm, it can be applied for finding the shortest paths in an acyclic graph.
+	It will take O(m+nlogn) time in the best case  
+	and O(m+n2) as the worst case ----- O(n2) for sorting and searching the minimum distance and o(m) because the loop will iterate for m number of vertices.
+ Hence we cant solve the problem in O(m+n) where m and n are the no of vertices and edges.

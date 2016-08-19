@@ -1,0 +1,16 @@
+﻿5. Explain how All-Pairs Shortest Paths in the Absence of Negative Cycles can be solved using Bellman-Ford and Dijkstra’s algorithm. (6M)
+
+All pairs shortest path has two solutions 
+1) Johnsons algorithm
+2) Fords algorithm
+
+Johnson's algorithm :
+If we consider the johnson's algorithm, we will get the shortest path with the help of Bellman-Ford algorithm and Dijkstra's algorithm
+within O(mn+nlogn) time.
+steps:
+1) First we will consider one node as the source vertex and for one time the bellman ford algorithm is applied.  O(mn)
+2) Then we will calculate the shortest distances by for n number of times, by applying Dijkstra's algorithm --- O(m+nlogn)
+a) here the algorithm is applied for the new costs obtained. 
+b)In this step, all the negative costs are converted
+3) Then we will roll back the changes, as we have performed the changes on the new edge costs.  
+4) we will get the new set of minimum distances in this step - it will take O(n) complexity since it runs for all the vertices.

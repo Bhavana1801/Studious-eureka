@@ -1,0 +1,56 @@
+function jpMST:set of edge
+	d=NodeArray[1...n]
+	parent:NodeArray of NodeID
+	Q:NodePQ
+	Q.insert(s) for some s belongs V
+	while Q != 0 do
+		u=Q.deleteMin
+		d[u]=0
+		foreach edge e=(u,v) belongs to E do
+			if c(e) <d[v] then
+				d[v]=c(e)
+				parent[v]=u
+				if v belongs to Q 
+				then Q.decreasekey(v)
+				else
+				Q.insert(v)
+		invariant vbelongs to Q d[v]=min{c((u,v)):(u,v)}
+	return v,parent[v]
+function kruskalMST(V,E,c):set of edge
+	T!=0
+	invariant T is a subforest of an MST
+	foreach(u,v) belongs to E in ascending order of cost do
+		if u,v are in different subtrees of T then
+			T=T union {(u,v)}
+	return T
+function kruskal(G):
+A=0
+foreach v belongs to G.v:
+	MAKE-SET(v)
+sort thr edges of G. ordered by weight w eloge
+foreach (u,v) ordered by weight(u,v), increasing:
+	if FIND-SET(u) != FIND-SET(v):
+		A=A union {(u,v)}
+		union(u,v)
+return A
+
+class unionfind(n)
+parent={1,2,3...n}
+rank-={0,0,...0}
+function find(i:1 to n)
+	if parent[i] = i then
+	return i
+	else i1 = find(parent[i])
+		parent[i]=i1
+		return i1
+procedure lin(i,j:1,2...n)
+	assert i and j, diff bolcks
+	if rank[i]<rank[j] then parent[i]=j
+	else
+	parent[j]=i
+	if rank[i]=rank[j]
+	then rank[i]++
+procedure union(i,j:1,2,3...n)
+	if find(i)!=find(j)
+	then link(find(i),find(j))
+				

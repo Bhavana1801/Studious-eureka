@@ -1,0 +1,25 @@
+﻿3. Write Dijkstra’s algorithm (If you use any specific methods in this algorithm, write algorithms for those specific methods). 
+What is the time complexity of Dijkstra’s algorithm (4+1=5M)
+complexity : O(m+n2)
+if we use binary heap O((m+n)logn)
+if we use fibanocci heap O(m+nlogn)         
+
+
+algorithm :
+function Dijkstra's(source,Node(d):NodeArray*NodeArray)
+	parent NodeArray = NodeID
+	parent[s] = source;
+	Q = NodePQ
+	distance[s] = 0;
+	Q.insert(s)
+	while(Q!=null) do :
+		k = Q.deleteMin()
+		for each e = (u,v): // e-edge, u,v are the two vertices
+			if (distance[u] - Cost(e) < distance[v]) :
+				distance[v] = distance[u] + cost(e)
+				parent(v) = u
+		if for all v belongs to Q then
+			Q.decrease()
+		else Q.insert(v)
+return parent
+		   
